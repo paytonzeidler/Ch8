@@ -1,0 +1,72 @@
+team = {}
+i = 1
+count = 1
+for i in range(1,3):
+    number = int(input('Enter player %s jersey number (Players jersey number (0-99):\n' %i))
+    rating = int(input('Enter player %s rating (Players rating (1-9):\n' %i))
+    team[number] = rating
+    i += 1
+def outputroster(team,number,rating):
+    if menu in 'o':
+        print("Roster")
+        for number,rating in sorted(team.items()):
+
+            print("Jersey number: %d, Rating: %d" % (number,rating))
+def addplayer(number,rating,team):
+    if menu in 'a':
+        number = int(input('Enter a new players jersey number:\n'))
+        rating = int(input('Enter a new players rating:\n'))
+        team[number] = rating
+def delplayer(number,rating, team):
+    if menu in 'd':
+        number = (int(input('Enter a jersey you want to delete:\n')))
+        if number in team.keys():
+            del team[number]
+
+def newrating(number, rating, team):
+    if menu in 'u':
+        number = int(input('Enter a jersey number:\n'))
+        if number in team.keys():
+            rating = int(input('Enter in new rating:\n'))
+            team[rating] = rating
+def aboverating(number, rating, team):
+    if menu in 'r':
+
+        rating_input=int(input('Enter a rating:\n'))
+
+        print('ABOVE {}'.format(rating_input))
+
+        for number,rating in sorted(team.items()):
+
+            if rating > rating_input:
+
+                print("Jersey number: %d, Rating: %d" % (number,rating))
+            
+    
+print("Roster")
+for number,rating in sorted(team.items()):
+
+    print("Jersey number: %d, Rating: %d" % (number,rating))
+    
+menu = ''
+while menu != 'q':
+    print("""MENU
+a - Add player
+d - Remove player
+u - Update player rating
+r - Output players above a rating
+o - Output roster
+q - Quit\n""")
+    menu = input('Choose an option:')
+    outputroster(team,number,rating)
+    addplayer(number,rating, team)
+    delplayer(number,rating, team)
+    newrating(number, rating, team)
+    aboverating(number, rating, team)
+def outputroster(team,number,rating):
+    if menu in 'o':
+        print("Roster")
+        for number,rating in sorted(team.items()):
+
+            print("Jersey number: %d, Rating: %d" % (number,rating))
+outputroster(team,number,rating)
