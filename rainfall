@@ -1,0 +1,16 @@
+months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+rainfall = [0]*12
+i = 0
+def input1(months, rainfall):
+    for i in range(0,12):
+        rainfall[i] = int(input('Enter %s rainfall:\n' %months[i] ))
+    
+        i += 1
+def calculations(rainfall):
+    total = sum(rainfall)
+    print('Total amount of rainfall: %s' %total)
+    print('Average rainfall per month: %d' %(total/12))
+    print('Max amount of rainfall: %d' %max(rainfall))
+    print('Min amount of rainfall: %d' %min(rainfall))
+input1(months, rainfall)
+calculations(rainfall)
